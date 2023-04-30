@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  ubuntu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu
+    entrypoint: './entrypoint.sh'
+    # platform: linux/amd64
+    restart: always
+    environment:
+      ENV: 'test'
+    ports:
+      - 3003:3003
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
