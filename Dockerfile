@@ -17,7 +17,6 @@ RUN mkdir -p /home/appuser/app
 WORKDIR /home/appuser/app
 
 RUN git clone https://github.com/poliyka/ubuntu-initialize-script.git
-RUN sed -i 's/OE_USER="poliyka"/OE_USER="appuser"/g' ubuntu-initialize-script/install.sh
 RUN echo "root" | sudo -S ubuntu-initialize-script/install.sh
 
 COPY ./entrypoint.sh /home/appuser/app/
